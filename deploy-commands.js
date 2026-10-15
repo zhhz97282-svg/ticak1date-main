@@ -1,7 +1,8 @@
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord.js');
 const fs = require('fs');
-const { token, clientID } = require('./config.json');
+const token = process.env.DISCORD_TOKEN;
+const clientID = process.env.CLIENT_ID;
 
 async function DeployCommands() {
 
