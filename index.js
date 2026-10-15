@@ -1,5 +1,9 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
-const { token } = require('./config.json');
+const token = process.env.DISCORD_TOKEN;
+if (!token) {
+    console.error('DISCORD_TOKEN is not set');
+    process.exit(1);
+}
 const { DeployCommands } = require('./deploy-commands');
 
 const client = new Client({ intents: [
